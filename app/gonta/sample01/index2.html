@@ -7,24 +7,26 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.9.3/lodash.js"></script>
-    <script src="app.js"></script>
+  <script src="app2.js"></script>
 
   <title>SampleXX</title>
 </head>
 
 <body>
-<!--SampleControllerというネームスペースができている-->
-<!--prototype継承(厄介)するので、as で　scopeの継承関係の問題を回避できる-->
 <div ng-controller="SampleController as ctrl">
-<!--ng-modelは双方向,ng-bindは参照オンリー-->
-<!--scopeというobjectの中に入っている-->
-<!--ngBind=ng-bindでいい {{::hoge}}ワンタイムバインディング-->
-first name<input type="text" ng-model="ctrl.first" ng-forcus="ctrl.alertFirstName()">
-last name<input type="text" ng-model="ctrl.last">
+
+    <div>
+        名前候補:
+        <input type="button" ng-click="ctrl.">
+        <input type="button" ng-click="ctrl.">
+    </div>
+
+First Name<input type="text" ng-model="ctrl.first" ng-forcus="ctrl.alertFirstName()">
 <br/>
- Hello,{{name}}
- Hello,{{ctrl.first}}
- Hello,{{ctrl.last}}
+Last Name<input type="text" ng-model="ctrl.last">
+<br/>
+<br/>
+    Hello,{{ctrl.first}} {{ctrl.last}}
   </div>
 </body>
 
