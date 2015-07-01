@@ -15,13 +15,15 @@
 <body>
 <div ng-controller="SampleController as ctrl">
 
-    <div>
+    <input type="button" ng-click="ctrl.hide()" value="非表示にする">
+
+    <div ng-show="ctrl.aaa">
         名前候補:
-        <input type="button" ng-click="ctrl.">
-        <input type="button" ng-click="ctrl.">
+        <input type="button" ng-click="ctrl.setName('sakamoto','ryuta')" value="ryuta sakamoto">
+        <input type="button" ng-click="ctrl.setName('kitagawa','itaru')" value="itaru kitagawa">
     </div>
 
-First Name<input type="text" ng-model="ctrl.first" ng-forcus="ctrl.alertFirstName()">
+First Name<input type="text" ng-model="ctrl.first">
 <br/>
 Last Name<input type="text" ng-model="ctrl.last">
 <br/>

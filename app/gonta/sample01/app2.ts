@@ -4,36 +4,43 @@
 //  angular.module('hoge');
 //}
 
-    //angular.module('sample',['ng'])
-    //    .controller('SampleController',function($scope){
-    //      this.first ='gonta';
-    //      this.last ='sakamoto';
-    //
-    //      var self = this;
-    //      this.alertFirstName = function(){
-    //        console.log('FirstName:' + self.first);
-    //      }
-    //    });
+//angular.module('sample',['ng'])
+//    .controller('SampleController',function($scope){
+//      this.first ='gonta';
+//      this.last ='sakamoto';
+//
+//      var self = this;
+//      this.alertFirstName = function(){
+//        console.log('FirstName:' + self.first);
+//      }
+//    });
 
 class SampleController {
-  public first:string;
-  last;
+    public first:string;
+    last;
+    public aaa:boolean;
 
-  constructor($scope) {
-    //$scope.xxx
-    this.first = 'Ryuta';
-    this.last = 'Sakamoto';
-  }
+    constructor($scope) {
+        //$scope.xxx
+        this.first = 'Ryuta';
+        this.last = 'Sakamoto';
+        this.aaa = true;
+    }
 
-  public alertFirstName() {
-    console.log('aiueo');
-  }
+    public change = (name) => {
 
-  public alertLastName = () => {
-    console.log('aiueo');
-  }
+        console.log('aiueo');
+    }
 
+    public hide = () => {
+        this.aaa = !this.aaa;
+    }
+
+    public setName(first, last) {
+        this.first = first;
+        this.last = last;
+    }
 }
 
-angular.module('sample',['ng'])
- .controller('SampleController',SampleController);
+angular.module('sample', ['ng'])
+    .controller('SampleController', SampleController);
